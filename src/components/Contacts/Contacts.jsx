@@ -5,24 +5,32 @@ import { fetchContacts } from 'redux/operations';
 
 import { ContactsList } from './Contacts.styled';
 import { ContactsItem } from './ContactsItem';
-import { selectContacts } from 'redux/selectors';
+import { selectContacts, selectFilter } from 'redux/selectors';
 import { Loader } from './Loader';
 
 export const Contacts = () => {
   const dispatch = useDispatch();
   const { items, isLoading, error } = useSelector(selectContacts);
+  const filterName = useSelector(selectFilter);
+
+  console.log('filterName', filterName);
 
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
+
+  let visibleContacts = items.filter(contact =>
+    contact.name.toLowerCase().includes(filterName)
+  );
+  console.log('visibleContacts', visibleContacts);
 
   return (
     <>
       {isLoading && <Loader />}
       {error && <b>{error}</b>}
       <ContactsList>
-        {items.length > 0 &&
-          items.map(({ id, name, phone }) => (
+        {visibleContacts.length > 0 &&
+          visibleContacts.map(({ id, name, phone }) => (
             <ContactsItem key={id} id={id} name={name} number={phone} />
           ))}
       </ContactsList>

@@ -18,7 +18,7 @@ export const ContactsItem = ({ id, name, number }) => {
   };
 
   return (
-    <ContactsListItem>
+    <ContactsListItem id={id}>
       <ContactsListText>
         {name}: {number}
       </ContactsListText>
