@@ -13,8 +13,6 @@ export const Contacts = () => {
   const { items, isLoading, error } = useSelector(selectContacts);
   const filterName = useSelector(selectFilter);
 
-  console.log('filterName', filterName);
-
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
@@ -22,7 +20,6 @@ export const Contacts = () => {
   let visibleContacts = items.filter(contact =>
     contact.name.toLowerCase().includes(filterName)
   );
-  console.log('visibleContacts', visibleContacts);
 
   return (
     <>

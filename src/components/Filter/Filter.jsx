@@ -9,7 +9,6 @@ export const Filter = () => {
 
   const changeFilter = e => {
     const newFilter = e.target.value.trim().toLowerCase();
-    console.log('changeFilter', newFilter);
     dispatch(filterContacts(newFilter));
   };
 
