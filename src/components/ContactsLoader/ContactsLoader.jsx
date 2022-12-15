@@ -5,9 +5,9 @@ const ContactsLoader = props => {
   return (
     <ContentLoader
       speed={2}
-      width={300}
-      height={615}
-      viewBox="0 0 300 615"
+      width={400}
+      height={1015}
+      viewBox="0 0 400 1015"
       backgroundColor="#f5f5f5"
       foregroundColor="#ebebeb"
       {...props}
@@ -38,13 +38,6 @@ const ContactsLoader = props => {
       <circle cx="39" cy="547" r="10" />
     </ContentLoader>
   );
-};
-
-ContactsLoader.metadata = {
-  name: 'Bohdan',
-  github: 'Bohdan100',
-  description: 'Phone contacts book with saving, adding and deleting contacts',
-  filename: 'ContactsLoader',
 };
 
 export default ContactsLoader;
