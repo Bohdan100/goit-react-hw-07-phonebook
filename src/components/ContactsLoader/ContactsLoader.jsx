@@ -1,7 +1,7 @@
 import React from 'react';
 import ContentLoader from 'react-content-loader';
 
-const GlobalSidebar = props => {
+const ContactsLoader = props => {
   return (
     <ContentLoader
       speed={2}
@@ -40,11 +40,11 @@ const GlobalSidebar = props => {
   );
 };
 
-GlobalSidebar.metadata = {
+ContactsLoader.metadata = {
   name: 'Bohdan',
   github: 'Bohdan100',
   description: 'Phone contacts book with saving, adding and deleting contacts',
   filename: 'ContactsLoader',
 };
 
-export default GlobalSidebar;
+export default ContactsLoader;
