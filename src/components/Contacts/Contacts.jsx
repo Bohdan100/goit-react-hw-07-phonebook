@@ -6,7 +6,9 @@ import { fetchContacts } from 'redux/operations';
 import { ContactsList } from './Contacts.styled';
 import { ContactsItem } from './ContactsItem';
 import { selectContacts, selectFilter } from 'redux/selectors';
-import { Loader } from './Loader';
+
+import ContentLoader from '../ContentLoader';
+// import { Loader } from './Loader';
 
 export const Contacts = () => {
   const dispatch = useDispatch();
@@ -23,7 +25,7 @@ export const Contacts = () => {
 
   return (
     <>
-      {isLoading && <Loader />}
+      {isLoading && <ContentLoader />}
       {error && <b>{error}</b>}
       <ContactsList>
         {visibleContacts.length > 0 &&
