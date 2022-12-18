@@ -6,8 +6,8 @@ const ContactsLoader = props => {
     <ContentLoader
       speed={2}
       width={400}
-      height={1015}
-      viewBox="0 0 400 1015"
+      height={800}
+      viewBox="0 0 400 800"
       backgroundColor="#f5f5f5"
       foregroundColor="#ebebeb"
       {...props}
